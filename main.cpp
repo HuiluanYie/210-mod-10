@@ -10,12 +10,12 @@
 #include <list>
 using namespace std;
 
-// Define a function to display the cafeteria.
-    // Parameters: map of food stations.
+const int WAITING = 0, SERVING = 1, FINISHED = 2;
+const int TIME = 20;
 
-    // For each food station:
-        // Display the station's name, the students in the waiting list, 
-        // in the serving list, and in the finished list.
+// Function prototypes
+void display(const map<string, array<list<int>, 3>>&);
+
 
 // Define a function to simulate a time period run.
     // Parameters: map of food stations, number of intervals.
@@ -47,17 +47,44 @@ int main()
     while (fin >> station >> student_id)
     {
         // Add the student the correct food station in the map.
-        cafeteria[station].[]
+        cafeteria[station][WAITING].push_back(student_id);
     }
-
     // Close the file
     fin.close();
 
     // Begin a time-based simulation for the cafeteria.
-        // For 20 time intervals
+        // For TIME time intervals
             // call the finction to simulate changes
 
             // Wait or pause briefly to simulate the passage of time between intervals
 // End of main function
     return 0;
 }
+
+
+// Define a function to display the cafeteria.
+    // Parameters: map of food stations.
+void display(const map<string, array<list<int>, 3>>& c)
+{
+    // For each food station:
+        // Display the station's name, the students in the waiting list, 
+        // in the serving list, and in the finished list.
+    for (size_t i = 0; i < count; i++)
+    {
+        /* code */
+    }
+    
+}
+
+
+    
+
+
+
+
+
+// Define a function to simulate a time period run.
+    // Parameters: map of food stations, number of intervals.
+
+    // for each food station in the map
+        // Randomly select one of the three possible events.
