@@ -6,7 +6,11 @@ This software will show how the cafeteria lines change during a lunch period.
 Implementation:
 I plan to use a std::map to store and manage sinulated students with different status 
 across each food station. This map will categorize the students into three std::lists 
-representing the student waiting, being served, finished
-
+representing the student waiting, being served and finished ordering.
+The map will have the food-station name as its key. 
+The map's value will be an array of these three lists.
 
 Simulated events:
+The simulation will focus on three events: 
+student be served; student changes lines; a service delay in food-station.
+At any given time period, students may be served, change lines, or experience a service delay.
