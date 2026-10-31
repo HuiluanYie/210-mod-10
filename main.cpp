@@ -13,8 +13,8 @@
 // Define a function to simulate a time period run.
     // Parameters: map of food stations, number of intervals.
 
-    
-
+    // for each food station in the map
+        // Randomly select one of the three possible events.
 
 // Define main function
     // Initialize a map to store the food-station information, 
@@ -30,15 +30,9 @@
 
     // Close the file
 
-
     // Begin a time-based simulation for the cafeteria.
         // For 20 time intervals
-            // Iterate through each food-station in the map
-                // For each food-station, simulate changes
+            // call the finction to simulate changes
 
-
-
-
-
-    // Wait or pause briefly to simulate the passage of time between intervals
+            // Wait or pause briefly to simulate the passage of time between intervals
 // End of main function
