@@ -2,6 +2,13 @@
 
 // Include necessary headers for file handling, data structures, 
 // strings, random numbers, and console input/output.
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+#include <array>
+#include <list>
+using namespace std;
 
 // Define a function to display the cafeteria.
     // Parameters: map of food stations.
@@ -16,7 +23,11 @@
     // for each food station in the map
         // Randomly select one of the three possible events.
 
+map<string,> cafeteria;
+
 // Define main function
+int main()
+{
     // Initialize a map to store the food-station information, 
     //   each associated with an array of lists for 
     //   waiting students, students being served, students who got food.
@@ -36,3 +47,5 @@
 
             // Wait or pause briefly to simulate the passage of time between intervals
 // End of main function
+    return 0;
+}
