@@ -1,0 +1,9 @@
+Project Overview:
+My project creates a school cafeteria simulation, a program designed to simulate 
+students moving through different food-station lines in a school cafeteria.
+This software will show how the cafeteria lines change during a lunch period.
+
+Implementation:
+I plan to use a std::map to store and manage data within each of the food-stations
+
+Simulated events:
