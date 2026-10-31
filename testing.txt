@@ -11,3 +11,15 @@ under Waiting, Serving, and Finished.
 
 unit testing:
 
+int main()
+{
+    map<string, array<list<int>, 3>> test_cafeteria;
+
+    test_cafeteria["Pizza"][WAITING].push_back(10001);
+    test_cafeteria["Pizza"][SERVING].push_back(10002);
+    test_cafeteria["Pizza"][FINISHED].push_back(10003);
+
+    display(test_cafeteria);
+
+    return 0;
+}

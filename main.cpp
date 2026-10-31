@@ -54,14 +54,6 @@ int main()
     // disply the current cafeteria(for testing)
     display(cafeteria);
 
-    // unit test:
-    map<string, array<list<int>, 3>> test_cafeteria;
-    test_cafeteria["Pizza"][WAITING].push_back(10001);
-    test_cafeteria["Pizza"][SERVING].push_back(10002);
-    test_cafeteria["Pizza"][FINISHED].push_back(10003);
-    cout << "\nRunning unit test:\n";
-    display(test_cafeteria);
-
     // Begin a time-based simulation for the cafeteria.
         // For TIME time intervals
             // call the finction to simulate changes
@@ -71,6 +63,21 @@ int main()
     return 0;
 }
 
+/*
+// unit test
+int main()
+{
+    map<string, array<list<int>, 3>> test_cafeteria;
+
+    test_cafeteria["Pizza"][WAITING].push_back(10001);
+    test_cafeteria["Pizza"][SERVING].push_back(10002);
+    test_cafeteria["Pizza"][FINISHED].push_back(10003);
+
+    display(test_cafeteria);
+
+    return 0;
+}
+*/
 
 // Define a function to display the cafeteria.
     // Parameters: map of food stations.
