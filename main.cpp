@@ -1,4 +1,4 @@
-// COMSC-210 | Lab 29 | Huiluan Yie
+// COMSC-210 | Lab 30 | Huiluan Yie
 
 // Include necessary headers for file handling, data structures, 
 // strings, random numbers, and console input/output.
