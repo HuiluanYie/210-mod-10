@@ -52,6 +52,9 @@ int main()
     // Close the file
     fin.close();
 
+    // disply the current cafeteria(for testing)
+    display(cafeteria);
+
     // Begin a time-based simulation for the cafeteria.
         // For TIME time intervals
             // call the finction to simulate changes
@@ -69,19 +72,27 @@ void display(const map<string, array<list<int>, 3>>& c)
     // For each food station:
         // Display the station's name, the students in the waiting list, 
         // in the serving list, and in the finished list.
-    for (size_t i = 0; i < count; i++)
+    for (auto s : c)
     {
-        /* code */
+        cout << "\nFood station: " << s.first << '\n';
+
+        cout << "Waiting: ";
+        for (int id : s.second[WAITING])
+        {
+            cout << id << ' ';
+        }
+        cout << "Serving: ";
+        for (int id : s.second[SERVING])
+        {
+            cout << id << ' ';
+        }
+        cout << "Finished: ";
+        for (int id : s.second[FINISHED])
+        {
+            cout << id << ' ';
+        }
     }
-    
 }
-
-
-    
-
-
-
-
 
 // Define a function to simulate a time period run.
     // Parameters: map of food stations, number of intervals.
