@@ -11,7 +11,6 @@
 using namespace std;
 
 const int WAITING = 0, SERVING = 1, FINISHED = 2;
-const int TIME = 20;
 
 // Function prototypes
 void display(const map<string, array<list<int>, 3>>&);

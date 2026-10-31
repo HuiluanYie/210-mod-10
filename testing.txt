@@ -1,0 +1,15 @@
+Unit Testing Description:
+
+Testing the display() function, with creating a small cafeteria
+map with known test data, it will contain 1 food station, 
+and contains 1 student in each of the 3 lists.
+
+The test will ensure that 
+
+
+
+//The test would ensure that the parameter variable g is properly processed within the function,
+ including private member variables and a variety of class functions. 
+ Perhaps it would add an extra output statement to the function in order to view some operation's output. 
+ Finally, a unit test would ensure that the return value is correctly returned, 
+ and that a default value will always be returned.
