@@ -3,7 +3,17 @@
 // Include necessary headers for file handling, data structures, 
 // strings, random numbers, and console input/output.
 
-// 
+// Define a function to display the cafeteria.
+    // Parameters: map of food stations.
+
+    // For each food station:
+        // Display the station's name, the students in the waiting list, 
+        // in the serving list, and in the finished list.
+
+// Define a function to simulate a time period run.
+    // Parameters: map of food stations, number of intervals.
+
+    
 
 
 // Define main function
@@ -22,6 +32,13 @@
 
 
     // Begin a time-based simulation for the cafeteria.
+        // For 20 time intervals
+            // Iterate through each food-station in the map
+                // For each food-station, simulate changes
 
 
+
+
+
+    // Wait or pause briefly to simulate the passage of time between intervals
 // End of main function
