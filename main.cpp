@@ -65,15 +65,10 @@ int main()
         }
         
         // Wait or pause briefly to simulate the passage of time between intervals
-            this_thread::sleep_for(chrono::seconds(1));
-
-        
-        
+        this_thread::sleep_for(chrono::seconds(1));
     }
     // Close the file
     fin.close();
-
-    
 
     
 // End of main function
@@ -135,7 +130,7 @@ void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
                 else
                 {
                     int id = s->second[WAITING].front();
-                    cout << "Student #" << id << " is now being served.";
+                    cout << "\nStudent #" << id << " is now being served.";
                     s->second[WAITING].pop_front();
                     s->second[SERVING].push_back(id);
                 }
@@ -143,7 +138,7 @@ void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             else
             {
                 int id = s->second[SERVING].front();
-                cout << "\nStudent #" << id << " is has been sussesfully served.";
+                cout << "\nStudent #" << id << " has been sussesfully served.";
                 s->second[SERVING].pop_front();
                 s->second[FINISHED].push_back(id);
             }
@@ -153,7 +148,7 @@ void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             // Event 2: A student changes lines.
             if (s->second[WAITING].empty())
             {
-                cout << "\nNo student in line.\n";
+                cout << "\nNo student in line.";
             }
             else
             {
