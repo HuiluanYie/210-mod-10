@@ -134,13 +134,14 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             else
             {
                 auto new_s = s;
-                // randomly move to
+                // randomly choose another food station
                 int move = rand() % 2;
-                if (move == 0)
-                {
+                new_s++;
+                if (move == 0)                  
                     new_s++;
-                }
-                
+
+                // move the student
+                int id = s->second[WAITING].;
 
             }
             

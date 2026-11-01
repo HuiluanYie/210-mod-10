@@ -7,3 +7,6 @@ Bug 2
 Problem: the member acsess notation "s.second" used in event 1 does not work for iteraters 
 Correction: use ->
 
+Bug 3
+Problem: += doesn't work for iteraters
+Correction: to increment the iterater twice, use 2 "++"
