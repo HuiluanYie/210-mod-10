@@ -13,4 +13,13 @@ Correction: to increment the iterater twice, use 2 "++"
 
 Bug 4
 Problem: student previously all enter the cafeteria before any event happen
-Correction: 
+Correction: simulate event happening while student enter the cafeteria
+            (reading in data from file)
+
+Bug 5
+Problem: formating in display is messy
+Correction: add \n and others for nice format
+
+Bug 6
+Problem: line is not built up for event to happen
+Correction: for every 4 students enter, randomly might happen an event 

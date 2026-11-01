@@ -8,6 +8,8 @@
 #include <map>
 #include <array>
 #include <list>
+#include <thread>
+#include <chrono>
 using namespace std;
 
 const int WAITING = 0, SERVING = 1, FINISHED = 2;
@@ -45,11 +47,11 @@ int main()
         // Begin a time-based simulation for the cafeteria.
         // For TIME time intervals
             // call the finction to simulate changes
+            time_run(cafeteria);
 
             // Wait or pause briefly to simulate the passage of time between intervals
-            
+            this_thread::sleep_for(chrono::seconds(1));
 
-            
         // disply the current cafeteria(for testing)
         display(cafeteria);
     }
@@ -75,17 +77,17 @@ void display(const map<string, array<list<int>, NUM_OF_EVENT>>& c)
     {
         cout << "\nFood station: " << s.first << '\n';
 
-        cout << "Waiting: ";
+        cout << "\nWaiting: ";
         for (int id : s.second[WAITING])
         {
             cout << id << ' ';
         }
-        cout << "Serving: ";
+        cout << "\nServing: ";
         for (int id : s.second[SERVING])
         {
             cout << id << ' ';
         }
-        cout << "Finished: ";
+        cout << "\nFinished: ";
         for (int id : s.second[FINISHED])
         {
             cout << id << ' ';
@@ -125,7 +127,7 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             else
             {
                 int id = s->second[SERVING].front();
-                cout << "Student #" << id << " is has been sussesfully served.";
+                cout << "\nStudent #" << id << " is has been sussesfully served.";
                 s->second[SERVING].pop_front();
                 s->second[FINISHED].push_back(id);
             }
@@ -135,7 +137,7 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             // Event 2: A student changes lines.
             if (s->second[WAITING].empty())
             {
-                cout << "No student in line.\n";
+                cout << "\nNo student in line.\n";
             }
             else
             {
@@ -152,13 +154,13 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
                 s->second[WAITING].pop_back();
                 new_s->second[WAITING].push_back(id);
 
-                cout << "Student #" << id << " changed to the " << new_s->first << " line.\n";
+                cout << "\nStudent #" << id << " changed to the " << new_s->first << " line.\n";
             }
             break;
 
         case 2:
             // Event 3: Service delay.
-            cout << "A service delay occurred.\n";
+            cout << "\nA service delay occurred.\n";
             break;
         
         default:
