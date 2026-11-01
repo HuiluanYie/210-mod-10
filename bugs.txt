@@ -1,0 +1,5 @@
+Bug 1
+Problem: used short hand looping through the cafeteria map,
+        and had problem in Event 2 for changing student in 1 food station to another.
+Correction: use iterater to loop through instead
+

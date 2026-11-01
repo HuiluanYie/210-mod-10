@@ -93,7 +93,8 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
 {
     // for each food station in the map
         // Randomly select one of the three possible events.
-    for (auto s : c)
+    auto s = c.begin();
+    while (s != c.end())
     {
         int event = rand() % NUM_OF_EVENT;
 
@@ -101,36 +102,41 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
         {
         case 0:
             // Event 1: Serve students.
-            if (s.second[SERVING].empty())
+            if (s->second[SERVING].empty())
             {
-                if (s.second[WAITING].empty())
+                if (s->second[WAITING].empty())
                 {
                     cout << "No student needs serving.";
                 }
                 else
                 {
-                    int id = s.second[WAITING].front();
+                    int id = s->second[WAITING].front();
                     cout << "Student #" << id << " is now being served.";
-                    s.second[WAITING].pop_front();
-                    s.second[SERVING].push_back(id);
+                    s->second[WAITING].pop_front();
+                    s->second[SERVING].push_back(id);
                 }
             }
             else
             {
-                int id = s.second[SERVING].front();
+                int id = s->second[SERVING].front();
                     cout << "Student #" << id << " is has been sussesfully served.";
-                    s.second[SERVING].pop_front();
-                    s.second[FINISHED].push_back(id);
+                    s->second[SERVING].pop_front();
+                    s->second[FINISHED].push_back(id);
             }
             break;
 
         case 1:
             // Event 2: A student changes lines.
-            if (s.second[WAITING].empty())
+            if (s->second[WAITING].empty())
             {
                 cout << "No student in line.\n";
             }
+            else if (condition)
+            {
+                /* code */
+            }
             
+
             break;
 
         case 2:
@@ -140,6 +146,7 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
         default:
             break;
         }
+        s++;
     }
     
     
