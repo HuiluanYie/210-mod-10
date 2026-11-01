@@ -1,0 +1,46 @@
+Bug 1
+Problem: used short hand looping through the cafeteria map,
+        and had problem in Event 2 for changing student in 1 food station to another.
+Correction: use iterater to loop through instead
+
+Bug 2
+Problem: the member acsess notation "s.second" used in event 1 does not work for iteraters 
+Correction: use ->
+
+Bug 3
+Problem: += doesn't work for iteraters
+Correction: to increment the iterater twice, use 2 "++"
+
+Bug 4
+Problem: student previously all enter the cafeteria before any event happen
+Correction: simulate event happening while student enter the cafeteria
+            (reading in data from file)
+
+Bug 5
+Problem: formating in display is messy
+Correction: add \n and others for nice format
+
+Bug 6
+Problem: line is not built up for event to happen
+Correction: for every 5 students enter, an event happen
+
+Bug 7
+Problem: when student change a food choice, only incrementing the iterater will get out of bound
+Correction: when the iterater is at the end of the map, move it back to the fromt 
+
+Bug 8
+Problem: too many output for every entry
+Correction: change it into only displaying when an event happen 
+
+Bug 9
+Problem: program was not truly random
+Correction: seed rand at the begining of main
+
+Bug 10
+Problem: 1 sec for each entry is too slow
+Correction: change to 100 milisecond
+
+Bug 10
+Problem: didn't show the initial state of the environment, and only 10 time periods
+Correction: make an initial state for the cafeteria, 
+            and run 15 more time periods, after all students enter
