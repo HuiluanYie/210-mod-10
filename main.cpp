@@ -130,6 +130,7 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             {
                 cout << "No student in line.\n";
             }
+            
             break;
 
         case 2:
