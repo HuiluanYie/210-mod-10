@@ -101,24 +101,35 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
         {
         case 0:
             // Event 1: Serve students.
-            if (condition)
+            if (s.second[SERVING].empty())
             {
-                /* code */
+                if (s.second[WAITING].empty())
+                {
+                    cout << "No student needs serving.";
+                }
+                else
+                {
+                    int id = s.second[WAITING].front();
+                    cout << "Student #" << id << " is now being served.";
+                    s.second[WAITING].pop_front();
+                    s.second[SERVING].push_back(id);
+                }
             }
-            
-
-            if (s.second[WAITING].empty())
+            else
             {
-                cout << "No student needs serving.";
+                int id = s.second[SERVING].front();
+                    cout << "Student #" << id << " is has been sussesfully served.";
+                    s.second[SERVING].pop_front();
+                    s.second[FINISHED].push_back(id);
             }
-            int id = s.second[WAITING].front();
-            cout << "Student #" << id << " is now being served.";
-            s.second[WAITING].pop_front();
-            s.second[SERVING].push_back(id);
             break;
 
         case 1:
             // Event 2: A student changes lines.
+            if (s.second[WAITING].empty())
+            {
+                cout << "No student in line.\n";
+            }
             break;
 
         case 2:
