@@ -55,18 +55,12 @@ int main()
         // for every R students enter
         if (count % R == 0)
         {
-            // randomly determine if an event happen
-            int r = rand() % 2;
-        
-            if (r == 0)
-            {
-                cout << "\n\nAfter " << count / R << " seconds.\n";
-                // call the finction to simulate changes
-                event(cafeteria);
-                
-                // disply the current cafeteria
-                display(cafeteria);
-            }
+            cout << "\n\nAfter " << count / R << " seconds.\n";
+            // call the finction to simulate changes
+            event(cafeteria);
+            
+            // disply the current cafeteria
+            display(cafeteria);
         }
         count++;
         // Wait or pause briefly to simulate the passage of time between intervals
@@ -75,6 +69,17 @@ int main()
     // Close the file
     fin.close();
 
+    // For TIME time intervals
+    for (int i = 0; i < TIME; i++)
+    {
+        // call the finction to simulate changes
+        event(cafeteria);
+        // disply the current cafeteria
+        display(cafeteria);
+        cout << endl << endl;
+        // Wait or pause briefly to simulate the passage of time between intervals
+        this_thread::sleep_for(chrono::seconds(1));
+    }
     
 // End of main function
     return 0;
