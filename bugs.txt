@@ -34,4 +34,8 @@ Correction: change it into only displaying when an event happen
 
 Bug 9
 Problem: program was not truly random
-Correction: seed rand at the begining of main 
+Correction: seed rand at the begining of main
+
+Bug 10
+Problem: 1 sec for each entry is too slow
+Correction: change to 500 milisecond

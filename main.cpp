@@ -55,7 +55,7 @@ int main()
         
             if (r == 0)
             {
-                cout << "\n\nAfter " << count << " seconds.\n";
+                cout << "\n\nAfter " << count / 2 << " seconds.\n";
                 // call the finction to simulate changes
                 event(cafeteria);
                 
@@ -65,7 +65,7 @@ int main()
         }
         
         // Wait or pause briefly to simulate the passage of time between intervals
-        this_thread::sleep_for(chrono::seconds(1));
+        this_thread::sleep_for(chrono::milliseconds(500));
     }
     // Close the file
     fin.close();
@@ -125,12 +125,12 @@ void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             {
                 if (s->second[WAITING].empty())
                 {
-                    cout << "No student needs serving.";
+                    cout << "No student needs serving.\n";
                 }
                 else
                 {
                     int id = s->second[WAITING].front();
-                    cout << "\nStudent #" << id << " is now being served.";
+                    cout << "Student #" << id << " is now being served.\n";
                     s->second[WAITING].pop_front();
                     s->second[SERVING].push_back(id);
                 }
@@ -138,7 +138,7 @@ void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             else
             {
                 int id = s->second[SERVING].front();
-                cout << "\nStudent #" << id << " has been sussesfully served.";
+                cout << "Student #" << id << " has been sussesfully served.\n";
                 s->second[SERVING].pop_front();
                 s->second[FINISHED].push_back(id);
             }
@@ -148,7 +148,7 @@ void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             // Event 2: A student changes lines.
             if (s->second[WAITING].empty())
             {
-                cout << "\nNo student in line.";
+                cout << "No student in line.\n";
             }
             else
             {
@@ -170,13 +170,13 @@ void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
                 s->second[WAITING].pop_back();
                 new_s->second[WAITING].push_back(id);
 
-                cout << "\nStudent #" << id << " changed to the " << new_s->first << " line.\n";
+                cout << "Student #" << id << " changed to the " << new_s->first << " line.\n";
             }
             break;
 
         case 2:
             // Event 3: Service delay.
-            cout << "\nA service delay occurred.\n";
+            cout << "A service delay occurred.\n";
             break;
         
         default:
