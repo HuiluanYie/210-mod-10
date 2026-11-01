@@ -154,8 +154,13 @@ void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
                 // randomly choose another food station
                 int move = rand() % 2;
                 new_s++;
+                if (new_s == c.end())
+                    new_s = c.begin();
+
                 if (move == 0)                  
                     new_s++;
+                    if (new_s == c.end())
+                        new_s = c.begin();
 
                 // move the student
                 int id = s->second[WAITING].back();

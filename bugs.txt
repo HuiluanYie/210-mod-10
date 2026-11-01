@@ -23,3 +23,7 @@ Correction: add \n and others for nice format
 Bug 6
 Problem: line is not built up for event to happen
 Correction: for every 4 students enter, randomly might happen an event 
+
+Bug 7
+Problem: when student change a food choice, only incrementing the iterater will get out of bound
+Correction: when the iterater is at the end of the map, move it back to the fromt 
