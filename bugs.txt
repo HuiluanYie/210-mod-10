@@ -41,5 +41,6 @@ Problem: 1 sec for each entry is too slow
 Correction: change to 200 milisecond
 
 Bug 10
-Problem: didn't show the initial state of the environment, and not garented for 25 time periods
-Correction: make an initial state for the cafeteria, and run 25 time periods, after all students enter
+Problem: didn't show the initial state of the environment, and only 10 time periods
+Correction: make an initial state for the cafeteria, 
+            and run 15 more time periods, after all students enter

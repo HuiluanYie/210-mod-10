@@ -13,7 +13,7 @@
 using namespace std;
 
 const int WAITING = 0, SERVING = 1, FINISHED = 2;
-const int TIME = 25, NUM_OF_EVENT = 3, R = 5;
+const int TIME = 15, NUM_OF_EVENT = 3, R = 10;
 
 // Function prototypes
 void display(const map<string, array<list<int>, 3>>&);
@@ -55,7 +55,7 @@ int main()
         // for every R students enter
         if (count % R == 0)
         {
-            cout << "\n\nAfter " << count / R << " seconds.\n";
+            cout << "\n\nAfter " << count / R << ".\n";
             // call the finction to simulate changes
             event(cafeteria);
             
@@ -64,10 +64,12 @@ int main()
         }
         count++;
         // Wait or pause briefly to simulate the passage of time between intervals
-        this_thread::sleep_for(chrono::milliseconds(200));
+        this_thread::sleep_for(chrono::milliseconds(500));
     }
     // Close the file
     fin.close();
+
+    cout << "\n\n============== no more student entering ==============\n";
 
     // For TIME time intervals
     for (int i = 0; i < TIME; i++)
