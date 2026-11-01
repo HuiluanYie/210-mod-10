@@ -3,3 +3,7 @@ Problem: used short hand looping through the cafeteria map,
         and had problem in Event 2 for changing student in 1 food station to another.
 Correction: use iterater to loop through instead
 
+Bug 2
+Problem: the member acsess notation "s.second" used in event 1 does not work for iteraters 
+Correction: use ->
+

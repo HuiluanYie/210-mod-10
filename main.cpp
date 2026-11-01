@@ -119,9 +119,9 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             else
             {
                 int id = s->second[SERVING].front();
-                    cout << "Student #" << id << " is has been sussesfully served.";
-                    s->second[SERVING].pop_front();
-                    s->second[FINISHED].push_back(id);
+                cout << "Student #" << id << " is has been sussesfully served.";
+                s->second[SERVING].pop_front();
+                s->second[FINISHED].push_back(id);
             }
             break;
 
@@ -131,9 +131,17 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
             {
                 cout << "No student in line.\n";
             }
-            else if (condition)
+            else
             {
-                /* code */
+                auto new_s = s;
+                // randomly move to
+                int move = rand() % 2;
+                if (move == 0)
+                {
+                    new_s++;
+                }
+                
+
             }
             
 
