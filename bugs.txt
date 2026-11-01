@@ -10,3 +10,7 @@ Correction: use ->
 Bug 3
 Problem: += doesn't work for iteraters
 Correction: to increment the iterater twice, use 2 "++"
+
+Bug 4
+Problem: student previously all enter the cafeteria before any event happen
+Correction: 

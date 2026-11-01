@@ -41,18 +41,24 @@ int main()
     {
         // Add the student the correct food station in the map.
         cafeteria[station][WAITING].push_back(student_id);
-    }
-    // Close the file
-    fin.close();
-
-    // disply the current cafeteria(for testing)
-    display(cafeteria);
-
-    // Begin a time-based simulation for the cafeteria.
+        
+        // Begin a time-based simulation for the cafeteria.
         // For TIME time intervals
             // call the finction to simulate changes
 
             // Wait or pause briefly to simulate the passage of time between intervals
+            
+
+            
+        // disply the current cafeteria(for testing)
+        display(cafeteria);
+    }
+    // Close the file
+    fin.close();
+
+    
+
+    
 // End of main function
     return 0;
 }
@@ -141,15 +147,18 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
                     new_s++;
 
                 // move the student
-                int id = s->second[WAITING].;
+                int id = s->second[WAITING].back();
 
+                s->second[WAITING].pop_back();
+                new_s->second[WAITING].push_back(id);
+
+                cout << "Student #" << id << " changed to the " << new_s->first << " line.\n";
             }
-            
-
             break;
 
         case 2:
             // Event 3: Service delay.
+            cout << "A service delay occurred.\n";
             break;
         
         default:
