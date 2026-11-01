@@ -11,7 +11,7 @@
 using namespace std;
 
 const int WAITING = 0, SERVING = 1, FINISHED = 2;
-const int TIME = 25;
+const int TIME = 25, NUM_OF_EVENT = 3;
 
 // Function prototypes
 void display(const map<string, array<list<int>, 3>>&);
@@ -23,7 +23,7 @@ int main()
     // Initialize a map to store the food-station information, 
     //   each associated with an array of lists for 
     //   waiting students, students being served, students who got food.
-    map<string, array<list<int>, 3>> cafeteria;
+    map<string, array<list<int>, NUM_OF_EVENT>> cafeteria;
     string station;
     int student_id;
 
@@ -60,7 +60,7 @@ int main()
 
 // Define a function to display the cafeteria.
     // Parameters: map of food stations.
-void display(const map<string, array<list<int>, 3>>& c)
+void display(const map<string, array<list<int>, NUM_OF_EVENT>>& c)
 {
     // For each food station:
         // Display the station's name, the students in the waiting list, 
@@ -88,14 +88,33 @@ void display(const map<string, array<list<int>, 3>>& c)
 }
 
 // Define a function to simulate a time period run.
-    // Parameters: map of food stations, number of intervals.
-void time_run(map<string, array<list<int>, 3>>& c, int )
+    // Parameters: map of food stations
+void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
 {
     // for each food station in the map
         // Randomly select one of the three possible events.
     for (auto s : c)
     {
-        int event = 
+        int event = rand() % NUM_OF_EVENT;
+
+        switch (event)
+        {
+        case 0:
+            // Event 1: Serve students.
+            
+            break;
+
+        case 1:
+            // Event 2: A student changes lines.
+            break;
+
+        case 2:
+            // Event 3: Service delay.
+            break;
+        
+        default:
+            break;
+        }
     }
     
     
