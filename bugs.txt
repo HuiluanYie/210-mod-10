@@ -22,8 +22,16 @@ Correction: add \n and others for nice format
 
 Bug 6
 Problem: line is not built up for event to happen
-Correction: for every 4 students enter, randomly might happen an event 
+Correction: for every 2 students enter, randomly might happen an event 
 
 Bug 7
 Problem: when student change a food choice, only incrementing the iterater will get out of bound
 Correction: when the iterater is at the end of the map, move it back to the fromt 
+
+Bug 8
+Problem: too many output for every entry
+Correction: change it into only displaying when an event happen 
+
+Bug 9
+Problem: program was not truly random
+Correction: seed rand at the begining of main 

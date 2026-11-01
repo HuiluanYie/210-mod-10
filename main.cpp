@@ -1,4 +1,4 @@
-// COMSC-210 | Lab 30 | Huiluan Yie
+// COMSC-210 | Lab 31 | Huiluan Yie
 
 // Include necessary headers for file handling, data structures, 
 // strings, random numbers, and console input/output.
@@ -13,7 +13,7 @@
 using namespace std;
 
 const int WAITING = 0, SERVING = 1, FINISHED = 2;
-const int TIME = 25, NUM_OF_EVENT = 3, R = 4;
+const int TIME = 25, NUM_OF_EVENT = 3, R = 2;
 
 // Function prototypes
 void display(const map<string, array<list<int>, 3>>&);
@@ -22,6 +22,7 @@ void event(map<string, array<list<int>, 3>>&);
 // Define main function
 int main()
 {
+    srand(time(0));
     // Initialize a map to store the food-station information, 
     //   each associated with an array of lists for 
     //   waiting students, students being served, students who got food.
@@ -50,18 +51,24 @@ int main()
         if (count % R == 0)
         {
             // randomly determine if an event happen
-            int move = rand() % 2;
+            int r = rand() % 2;
         
-            // call the finction to simulate changes
-            event(cafeteria);
+            if (r == 0)
+            {
+                cout << "\n\nAfter " << count << " seconds.\n";
+                // call the finction to simulate changes
+                event(cafeteria);
+                
+                // disply the current cafeteria
+                display(cafeteria);
+            }
         }
         
         // Wait or pause briefly to simulate the passage of time between intervals
             this_thread::sleep_for(chrono::seconds(1));
 
-        // disply the current cafeteria(for testing)
-        cout << "\n\nAfter " << count << " time.\n";
-        display(cafeteria);
+        
+        
     }
     // Close the file
     fin.close();
