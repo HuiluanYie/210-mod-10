@@ -11,17 +11,11 @@
 using namespace std;
 
 const int WAITING = 0, SERVING = 1, FINISHED = 2;
+const int TIME = 25;
 
 // Function prototypes
 void display(const map<string, array<list<int>, 3>>&);
-
-
-// Define a function to simulate a time period run.
-    // Parameters: map of food stations, number of intervals.
-
-    // for each food station in the map
-        // Randomly select one of the three possible events.
-
+void time_run(map<string, array<list<int>, 3>>&);
 
 // Define main function
 int main()
@@ -63,21 +57,6 @@ int main()
     return 0;
 }
 
-/*
-// unit test
-int main()
-{
-    map<string, array<list<int>, 3>> test_cafeteria;
-
-    test_cafeteria["Pizza"][WAITING].push_back(10001);
-    test_cafeteria["Pizza"][SERVING].push_back(10002);
-    test_cafeteria["Pizza"][FINISHED].push_back(10003);
-
-    display(test_cafeteria);
-
-    return 0;
-}
-*/
 
 // Define a function to display the cafeteria.
     // Parameters: map of food stations.
@@ -110,6 +89,14 @@ void display(const map<string, array<list<int>, 3>>& c)
 
 // Define a function to simulate a time period run.
     // Parameters: map of food stations, number of intervals.
-
+void time_run(map<string, array<list<int>, 3>>& c, int )
+{
     // for each food station in the map
         // Randomly select one of the three possible events.
+    for (auto s : c)
+    {
+        int event = 
+    }
+    
+    
+}
