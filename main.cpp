@@ -13,7 +13,7 @@
 using namespace std;
 
 const int WAITING = 0, SERVING = 1, FINISHED = 2;
-const int TIME = 25, NUM_OF_EVENT = 3, R = 2;
+const int TIME = 25, NUM_OF_EVENT = 3, R = 5;
 
 // Function prototypes
 void display(const map<string, array<list<int>, 3>>&);
@@ -31,6 +31,12 @@ int main()
     int student_id;
     int count = 0;
 
+    // initial state of the cafeteria
+    cafeteria["Pizza"][WAITING].push_back(10101);
+    cafeteria["Pizza"][SERVING].push_back(10102);
+    cafeteria["Pizza"][FINISHED].push_back(10103);
+    display(cafeteria);
+
     // Open an external file to read initial data about the food-stations and populate the map
     ifstream fin("students.txt");
     // If file does not open, print an error and exit
@@ -45,7 +51,6 @@ int main()
     {
         // Add the student the correct food station in the map.
         cafeteria[station][WAITING].push_back(student_id);
-        count++;
         
         // for every R students enter
         if (count % R == 0)
@@ -55,7 +60,7 @@ int main()
         
             if (r == 0)
             {
-                cout << "\n\nAfter " << count / 2 << " seconds.\n";
+                cout << "\n\nAfter " << count / R << " seconds.\n";
                 // call the finction to simulate changes
                 event(cafeteria);
                 
@@ -63,9 +68,9 @@ int main()
                 display(cafeteria);
             }
         }
-        
+        count++;
         // Wait or pause briefly to simulate the passage of time between intervals
-        this_thread::sleep_for(chrono::milliseconds(500));
+        this_thread::sleep_for(chrono::milliseconds(200));
     }
     // Close the file
     fin.close();

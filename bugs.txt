@@ -22,7 +22,7 @@ Correction: add \n and others for nice format
 
 Bug 6
 Problem: line is not built up for event to happen
-Correction: for every 2 students enter, randomly might happen an event 
+Correction: for every 5 students enter, randomly might happen an event 
 
 Bug 7
 Problem: when student change a food choice, only incrementing the iterater will get out of bound
@@ -38,4 +38,8 @@ Correction: seed rand at the begining of main
 
 Bug 10
 Problem: 1 sec for each entry is too slow
-Correction: change to 500 milisecond
+Correction: change to 200 milisecond
+
+Bug 10
+Problem: didn't show the initial state of the environment, and not garented for 25 time periods
+Correction: make an initial state for the cafeteria, and run 25 time periods, after all students enter
