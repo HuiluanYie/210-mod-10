@@ -101,7 +101,20 @@ void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
         {
         case 0:
             // Event 1: Serve students.
+            if (condition)
+            {
+                /* code */
+            }
             
+
+            if (s.second[WAITING].empty())
+            {
+                cout << "No student needs serving.";
+            }
+            int id = s.second[WAITING].front();
+            cout << "Student #" << id << " is now being served.";
+            s.second[WAITING].pop_front();
+            s.second[SERVING].push_back(id);
             break;
 
         case 1:
