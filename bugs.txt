@@ -38,7 +38,7 @@ Correction: seed rand at the begining of main
 
 Bug 10
 Problem: 1 sec for each entry is too slow
-Correction: change to 200 milisecond
+Correction: change to 100 milisecond
 
 Bug 10
 Problem: didn't show the initial state of the environment, and only 10 time periods
