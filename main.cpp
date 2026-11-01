@@ -13,11 +13,11 @@
 using namespace std;
 
 const int WAITING = 0, SERVING = 1, FINISHED = 2;
-const int TIME = 25, NUM_OF_EVENT = 3;
+const int TIME = 25, NUM_OF_EVENT = 3, R = 4;
 
 // Function prototypes
 void display(const map<string, array<list<int>, 3>>&);
-void time_run(map<string, array<list<int>, 3>>&);
+void event(map<string, array<list<int>, 3>>&);
 
 // Define main function
 int main()
@@ -28,6 +28,7 @@ int main()
     map<string, array<list<int>, NUM_OF_EVENT>> cafeteria;
     string station;
     int student_id;
+    int count = 0;
 
     // Open an external file to read initial data about the food-stations and populate the map
     ifstream fin("students.txt");
@@ -43,16 +44,23 @@ int main()
     {
         // Add the student the correct food station in the map.
         cafeteria[station][WAITING].push_back(student_id);
+        count++;
         
-        // Begin a time-based simulation for the cafeteria.
-        // For TIME time intervals
+        // for every R students enter
+        if (count % R == 0)
+        {
+            // randomly determine if an event happen
+            int move = rand() % 2;
+        
             // call the finction to simulate changes
-            time_run(cafeteria);
-
-            // Wait or pause briefly to simulate the passage of time between intervals
+            event(cafeteria);
+        }
+        
+        // Wait or pause briefly to simulate the passage of time between intervals
             this_thread::sleep_for(chrono::seconds(1));
 
         // disply the current cafeteria(for testing)
+        cout << "\n\nAfter " << count << " time.\n";
         display(cafeteria);
     }
     // Close the file
@@ -77,7 +85,7 @@ void display(const map<string, array<list<int>, NUM_OF_EVENT>>& c)
     {
         cout << "\nFood station: " << s.first << '\n';
 
-        cout << "\nWaiting: ";
+        cout << "Waiting: ";
         for (int id : s.second[WAITING])
         {
             cout << id << ' ';
@@ -92,12 +100,13 @@ void display(const map<string, array<list<int>, NUM_OF_EVENT>>& c)
         {
             cout << id << ' ';
         }
+        cout << endl;
     }
 }
 
 // Define a function to simulate a time period run.
     // Parameters: map of food stations
-void time_run(map<string, array<list<int>, NUM_OF_EVENT>>& c)
+void event(map<string, array<list<int>, NUM_OF_EVENT>>& c)
 {
     // for each food station in the map
         // Randomly select one of the three possible events.
